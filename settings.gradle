@@ -10,4 +10,4 @@ pluginManagement {
 }
 
 // Should match your modid
-rootProject.name = 'strawberry-flavored-tweaks'
+rootProject.name = 'strawberry_flavored_tweaks'

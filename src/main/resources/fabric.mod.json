@@ -1,18 +1,18 @@
 {
 	"schemaVersion": 1,
-	"id": "strawberry-flavored-tweaks",
+	"id": "strawberry_flavored_tweaks",
 	"version": "${version}",
-	"name": "strawberry-flavored-tweaks",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Strawberry Flavored Tweaks",
+	"description": "Utility mod for Strawberry Flavored",
 	"authors": [
-		"Me!"
+		"Phatdog731"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/strawberry-flavored-tweaks/icon.png",
+	"icon": "assets/strawberry_flavored_tweaks/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -23,9 +23,9 @@
 		]
 	},
 	"mixins": [
-		"strawberry-flavored-tweaks.mixins.json",
+		"strawberry_flavored_tweaks.mixins.json",
 		{
-			"config": "strawberry-flavored-tweaks.client.mixins.json",
+			"config": "strawberry_flavored_tweaks.client.mixins.json",
 			"environment": "client"
 		}
 	],
@@ -34,5 +34,8 @@
 		"minecraft": "~26.1.2",
 		"java": ">=25",
 		"fabric-api": "*"
+	},
+	"suggests": {
+		"alloyed": "*"
 	}
 }

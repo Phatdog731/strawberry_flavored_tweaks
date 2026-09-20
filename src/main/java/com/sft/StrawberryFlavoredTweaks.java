@@ -1,5 +1,6 @@
 package com.sft;
 
+import com.sft.config.SftConfigs;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
@@ -8,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class StrawberryFlavoredTweaks implements ModInitializer {
-	public static final String MOD_ID = "strawberry-flavored-tweaks";
+	public static final String MOD_ID = "strawberry_flavored_tweaks";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -20,8 +21,10 @@ public class StrawberryFlavoredTweaks implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		SftConfigs.init();
+		com.sft.compat.durability.DurabilityTweaks.initialize();
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Strawberry Tweaks Started!");
 	}
 
 	public static Identifier id(String path) {

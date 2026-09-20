@@ -4,18 +4,33 @@ plugins {
 }
 
 repositories {
-	// Add repositories to retrieve artifacts from in here.
-	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
+	exclusiveContent {
+		forRepository {
+			maven {
+				name = "Modrinth"
+				url = "https://api.modrinth.com/maven"
+			}
+		}
+		// forRepositories(fg.repository) // Uncomment when using ForgeGradle
+		filter {
+			includeGroup "maven.modrinth"
+		}
+	}
+	maven {
+		name = "Wisp Forest"
+		url = "https://maven.wispforest.io/releases/"
+	}
+	maven {
+		name = "JitPack"
+		url = "https://jitpack.io"
+	}
 }
 
 loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"strawberry-flavored-tweaks" {
+		"strawberry_flavored_tweaks" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
@@ -29,6 +44,17 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	// owo-lib
+	implementation "io.wispforest:owo-lib:${project.owo_version}"
+	annotationProcessor "io.wispforest:owo-lib:${project.owo_version}"
+	// Mod Menu
+	clientImplementation "maven.modrinth:mOgUt4GM:${project.mod_menu_version}"
+	// Text Placeholder Api
+	implementation "maven.modrinth:eXts2L7r:${project.text_placeholder_api}"
+	// Custom Durability
+	implementation "maven.modrinth:u9Ogztnf:${project.custom_durability}"
+	// Alloyed
+	implementation "maven.modrinth:KUInlTFo:${project.alloyed}"
 }
 
 processResources {
