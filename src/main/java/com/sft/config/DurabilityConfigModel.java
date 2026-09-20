@@ -26,7 +26,7 @@ public class DurabilityConfigModel {
 
     // Items listed here ignore their durabilities entry (if any) and become
     // unbreakable instead, mirroring Custom Durability's per-item checkbox.
-    public List<String> unbreakableItems = new ArrayList<>();
+    public List<String> unbreakableItems = defaultUnbreakable();
 
     private static Map<String, Integer> defaultDurabilities() {
         Map<String, Integer> map = new LinkedHashMap<>();
@@ -47,6 +47,34 @@ public class DurabilityConfigModel {
         map.put("alloyed:steel_leggings", 225);
         map.put("alloyed:steel_boots", 195);
 
+        // Create Fly
+        map.put("create:super_glue", 99);    // ignored below - glue is unbreakable
+        map.put("create:sand_paper", 8);
+        map.put("create:red_sand_paper", 8);
+
+
         return map;
+    }
+
+    private static List<String> defaultUnbreakable() {
+        List<String> list = new ArrayList<>();
+        list.add("create:super_glue");
+        list.add("enderitemod:enderite_pickaxe");
+        list.add("enderitemod:enderite_axe");
+        list.add("enderitemod:enderite_hoe");
+        list.add("enderitemod:enderite_shovel");
+        list.add("enderitemod:enderite_sword");
+        list.add("enderitemod:enderite_spear");
+        list.add("enderitemod:enderite_shears");
+        list.add("enderitemod:enderite_bow");
+        list.add("enderitemod:enderite_crossbow");
+        list.add("enderitemod:enderite_shield");
+        list.add("enderitemod:enderite_elytra");
+        list.add("enderitemod:enderite_elytra_seperated");
+        list.add("enderitemod:enderite_helmet");
+        list.add("enderitemod:enderite_chestplate");
+        list.add("enderitemod:enderite_leggings");
+        list.add("enderitemod:enderite_boots");
+        return list;
     }
 }

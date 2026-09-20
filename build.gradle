@@ -55,6 +55,14 @@ dependencies {
 	implementation "maven.modrinth:u9Ogztnf:${project.custom_durability}"
 	// Alloyed
 	implementation "maven.modrinth:KUInlTFo:${project.alloyed}"
+	// Create Fly
+	implementation "maven.modrinth:dKvj0eNn:${project.create_fly}"
+	// Architectury API
+	implementation "maven.modrinth:lhGA9TYQ:${project.architectury}"
+	// Cloth Config
+	implementation "maven.modrinth:9s6osm5g:${project.cloth_config}"
+	// Enderite Mod
+	implementation "maven.modrinth:6lvRWqbA:${project.enderite}"
 }
 
 processResources {
